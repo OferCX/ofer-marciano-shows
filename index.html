@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>עופר מרסיאנו | ערב אקוסטי - הופעות קרובות</title>
+  <meta name="description" content="שני מופעים חדשים - נוקטורנו ירושלים (27.9.2026) ותיאטרון תמונע תל אביב (25.10.2026). כרטיסים כאן.">
+
+  <meta property="og:title" content="עופר מרסיאנו | ערב אקוסטי">
+  <meta property="og:description" content="שני מופעים חדשים - נוקטורנו ירושלים ותיאטרון תמונע תל אביב. כרטיסים כאן.">
+  <meta property="og:image" content="assets/show-poster.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face{
+      font-family:'FBFormulaNarrow';
+      src:url('assets/fonts/facebook-narrow-app-regular.ttf') format('truetype');
+      font-display:swap;
+    }
+
+    :root{
+      --ink:      #0E0B06;
+      --ink-2:    #171108;
+      --gold:     #B87820;
+      --gold-l:   #CE9030;
+      --gold-pale:#E4C46A;
+      --t-cream:      #EDE5D2;
+      --t-cream-dim:  #9A8B72;
+      --b-gold:  rgba(184,120,32,0.28);
+      --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:'Rubik', sans-serif;
+      background:radial-gradient(120% 90% at 50% 15%, var(--ink-2) 0%, var(--ink) 65%);
+      color:var(--t-cream);
+      direction:rtl; overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      min-height:100svh;
+      display:flex; flex-direction:column;
+    }
+
+    body::after{
+      content:''; position:fixed; inset:0;
+      pointer-events:none; z-index:900; opacity:.035;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    main{
+      flex:1; display:flex; align-items:center; justify-content:center;
+      padding:clamp(2rem,5vh,4.5rem) 1.5rem 3rem;
+    }
+
+    .layout{
+      display:flex; flex-direction:column; align-items:center;
+      width:100%;
+    }
+
+    /* ── POSTER ── */
+    .poster{
+      position:relative;
+      width:min(420px, 100%);
+      aspect-ratio:4/5;
+      overflow:hidden;
+      border:1px solid var(--b-gold);
+      box-shadow:0 30px 70px rgba(0,0,0,.55);
+      background:var(--ink-2);
+      flex-shrink:0;
+    }
+    .poster::before{
+      content:'';
+      position:absolute; inset:-24px;
+      background:url('assets/show-photo.jpg') center/cover no-repeat;
+      filter:blur(32px) brightness(.5) saturate(1.1);
+      transform:scale(1.15);
+      z-index:0;
+    }
+    .poster img{
+      position:absolute; inset:0; z-index:1;
+      width:100%; height:100%;
+      object-fit:contain; object-position:center;
+      display:block;
+    }
+
+    /* ── TICKET STUB ── */
+    .stub{
+      width:min(420px, 100%);
+      border-inline:1px solid var(--b-gold);
+      border-bottom:1px solid var(--b-gold);
+      background:
+        radial-gradient(140% 100% at 50% 0%, rgba(184,120,32,.08), transparent 55%),
+        var(--ink-2);
+    }
+    .stub-eyebrow{
+      font-family:'FBFormulaNarrow','Rubik', sans-serif;
+      font-size:.68rem; color:var(--t-cream-dim);
+      letter-spacing:.16em; text-transform:uppercase;
+      text-align:center; padding:1.1rem 1rem .2rem;
+    }
+    .tear{
+      position:relative; height:0;
+      border-top:1.5px dashed var(--b-gold);
+      margin-top:.9rem;
+    }
+    .tear::before,.tear::after{
+      content:''; position:absolute; top:-7px;
+      width:14px; height:14px; border-radius:50%;
+      background:var(--ink);
+    }
+    .tear::before{ right:-7px; }
+    .tear::after{ left:-7px; }
+
+    .shows-row{ display:flex; }
+    .show{
+      flex:1; display:flex; flex-direction:column; align-items:center;
+      gap:.45rem; padding:1.6rem 1rem 1.8rem;
+      text-align:center;
+    }
+    .show + .show{ border-right:1px dashed var(--b-gold); }
+    .show-day{
+      font-family:'FBFormulaNarrow','Rubik', sans-serif;
+      font-size:.72rem; color:#fff; letter-spacing:.12em; text-transform:uppercase;
+    }
+    .show-date{
+      font-family:'FBFormulaNarrow','Rubik', sans-serif;
+      font-size:1.9rem; font-weight:700; color:#fff; letter-spacing:.02em;
+    }
+    .show-venue{ font-family:'FBFormulaNarrow','Rubik', sans-serif; font-size:.9rem; color:#fff; }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+      margin-top:.5rem;
+      padding:.75rem 1.5rem;
+      font-family:'FBFormulaNarrow','Rubik', sans-serif;
+      font-size:.72rem; font-weight:500;
+      letter-spacing:.14em; text-transform:uppercase;
+      text-decoration:none; transition:all .25s; border:none; cursor:pointer;
+      background:var(--gold); color:var(--ink);
+      width:100%;
+    }
+    .btn:hover{ background:var(--gold-l); transform:translateY(-2px); }
+    .btn:focus-visible{ outline:2px solid var(--gold-pale); outline-offset:2px; }
+
+    footer{
+      border-top:1px solid var(--b-gold);
+      padding:1.6rem 1.5rem;
+      text-align:center;
+    }
+    footer span{
+      font-family:'FBFormulaNarrow','Rubik', sans-serif;
+      font-size:.75rem; color:var(--t-cream-dim);
+      text-decoration:none; letter-spacing:.06em;
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .btn{ transition:none; }
+    }
+
+    @media(max-width:480px){
+      .shows-row{ flex-direction:column; }
+      .show + .show{ border-right:none; border-top:1px dashed var(--b-gold); }
+    }
+
+    /* ── DESKTOP: photo right, tickets left ── */
+    @media(min-width:860px){
+      .layout{
+        flex-direction:row; align-items:stretch; justify-content:center;
+        height:min(84svh, 760px);
+        max-width:1160px;
+      }
+      .poster{
+        width:auto; aspect-ratio:auto; height:100%;
+        flex:1.15;
+      }
+      .stub{
+        position:relative;
+        width:auto; height:100%;
+        flex:1;
+        border-inline-start:1.5px dashed var(--b-gold);
+        display:flex; flex-direction:column; justify-content:center;
+      }
+      .stub::before,.stub::after{
+        content:''; position:absolute; inset-inline-start:-7px;
+        width:14px; height:14px; border-radius:50%;
+        background:var(--ink); z-index:1;
+      }
+      .stub::before{ top:-7px; }
+      .stub::after{ bottom:-7px; }
+      .stub-eyebrow{ padding-top:0; }
+      .tear{ display:none; }
+      .shows-row{ flex-direction:column; }
+      .show{ flex:none; padding:1.4rem 2.4rem; text-align:center; }
+      .show + .show{
+        border-right:none; border-top:1px dashed var(--b-gold);
+      }
+      .btn{ width:auto; padding:.85rem 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <div class="layout">
+  <div class="poster">
+    <img src="assets/show-poster.jpg" alt="עופר מרסיאנו - ערב אקוסטי">
+  </div>
+
+  <div class="stub">
+    <h1 class="stub-eyebrow">עופר מרסיאנו · ערב אקוסטי</h1>
+    <div class="tear"></div>
+    <div class="shows-row">
+      <div class="show">
+        <span class="show-day">יום ראשון</span>
+        <span class="show-date">27/09</span>
+        <span class="show-venue">נוקטורנו ירושלים</span>
+        <a class="btn" href="https://www.eventer.co.il/7gq2f" target="_blank" rel="noopener">כרטיסים</a>
+      </div>
+      <div class="show">
+        <span class="show-day">יום ראשון</span>
+        <span class="show-date">25/10</span>
+        <span class="show-venue">תיאטרון תמונע ת"א</span>
+        <a class="btn" href="https://www.tmu-na.org.il/?ArticleID=6479&CategoryID=102" target="_blank" rel="noopener">כרטיסים</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>
+
+<footer>
+  <span>עופר מרסיאנו</span>
+</footer>
+
+</body>
+</html>
