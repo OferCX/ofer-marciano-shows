@@ -113,6 +113,7 @@
       background:
         radial-gradient(140% 100% at 50% 0%, rgba(184,120,32,.08), transparent 55%),
         var(--ink-2);
+      order:-1; /* mobile: ticket buttons above the fold, before the poster */
     }
     .stub-eyebrow{
       font-family:'FBFormulaNarrow','Rubik', sans-serif;
@@ -201,6 +202,7 @@
         flex:1;
         border-inline-start:1.5px dashed var(--b-gold);
         display:flex; flex-direction:column; justify-content:center;
+        order:0;
       }
       .stub::before,.stub::after{
         content:''; position:absolute; inset-inline-start:-7px;
